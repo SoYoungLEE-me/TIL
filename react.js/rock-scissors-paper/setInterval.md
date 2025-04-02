@@ -41,7 +41,6 @@ const intervalId = setInterval(...);
 1. useRef로 id를 저장
 
 ```
-
 const intervalRef = useRef(null);
 
 const start = () => {
@@ -49,9 +48,9 @@ const start = () => {
 };
 
 const stop = () => {
-  clearInterval(intervalRef.current); // ✅ 항상 정확한 값 유지됨
-};
-
+ clearInterval(intervalRef.current);
+intervalRef.current = null;
+}
 
 ```
 
